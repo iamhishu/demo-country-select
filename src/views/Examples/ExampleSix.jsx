@@ -14,12 +14,12 @@ const useStyles = makeStyles((theme) => ({
 export default function ExamppleOne() {
     const classes = useStyles();
     const [country, setCountry] = useState("");
-    const [state, setState] = useState("")
+
     return (
         <Grid container spacing={2}>
             <Grid item xs={12} lg={12} md={12} style={{ textAlign: 'left' }}>
                 <Typography variant="h6">
-                    5. The Country and Region dropdowns support the use of arbitrary attributes, including style and tabindex
+                    6. Prioritize India, United States and the UK by displaying them at the top of the dropdown list.
                 </Typography>
             </Grid>
             <Grid item xs={12} lg={12} md={12}>
@@ -30,22 +30,13 @@ export default function ExamppleOne() {
                             value={country}
                             onChange={setCountry}
                             showLabel
-
                             label="Select Country"
-                            labelProps={{ className: 'testClassname', style: { textTransform: 'uppercase', color: 'red' } }}
-                            inputProps={{ className: 'selectorInput', style: { borderColor: 'red', background: "rgb(42, 39, 52)", color: '#fff' } }}
+                            leadingCountries={["in", "us", "ca"]} // use leadingCountries Props if you want to prioritize your preferred countries.
+
                         />
                     </Grid>
                     <Grid item xs={6} lg={6} md={6}>
-                        <RegionSelector
-                            country={country}
-                            value={state}
-                            onChange={setState}
-                            showLabel
-                            label="Select State"
-                            labelProps={{ className: 'testClassname', style: { textTransform: 'uppercase', color: 'blue' } }}
-                            inputProps={{ className: 'selectorInput', style: { borderColor: '#000', background: "#e9e7dc", color: '#000' } }}
-                        />
+
                     </Grid>
                 </Grid>
             </Grid>

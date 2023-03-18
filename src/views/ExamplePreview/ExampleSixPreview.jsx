@@ -5,7 +5,7 @@ import theme from "prism-react-renderer/themes/nightOwl";
 //
 const basicUsage = `
   const [country, setCountry] = useState('');
-const [region, setRegion] = useState('');
+
 
 <CountrySelector
 showCountryFlag
@@ -13,27 +13,8 @@ value={country}
 onChange={setCountry}
 showLabel
 label="Select Country"
-labelProps={{ className: 'testClassname', 
-style: { textTransform: 'uppercase', color: 'red' } 
-}}
-inputProps={{ className: 'selectorInput', 
-style: { borderColor: 'red', 
-background: "rgb(42, 39, 52)", color: '#fff' 
-} 
-}}
-/>
-<RegionSelector
-country={country}
-value={state}
-onChange={setState}
-showLabel
-label="Select State"
-labelProps={{ className: 'testClassname', 
-style: { textTransform: 'uppercase', color: 'blue' }
- }}
-inputProps={{ className: 'selectorInput', 
-style: { borderColor: '#000', background: "#e9e7dc", color: '#000' } 
-}}
+leadingCountries={["in", "us", "ca"]} // use "leadingCountries" Props 
+//if you want to prioritize your preferred countries.
 />
 `.trim();
 

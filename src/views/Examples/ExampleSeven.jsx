@@ -19,7 +19,7 @@ export default function ExamppleOne() {
         <Grid container spacing={2}>
             <Grid item xs={12} lg={12} md={12} style={{ textAlign: 'left' }}>
                 <Typography variant="h6">
-                    5. The Country and Region dropdowns support the use of arbitrary attributes, including style and tabindex
+                    7. Approve only particular regions
                 </Typography>
             </Grid>
             <Grid item xs={12} lg={12} md={12}>
@@ -30,10 +30,16 @@ export default function ExamppleOne() {
                             value={country}
                             onChange={setCountry}
                             showLabel
-
                             label="Select Country"
-                            labelProps={{ className: 'testClassname', style: { textTransform: 'uppercase', color: 'red' } }}
-                            inputProps={{ className: 'selectorInput', style: { borderColor: 'red', background: "rgb(42, 39, 52)", color: '#fff' } }}
+                            inputProps={{
+                                className: 'selectorInput',
+                                style: {
+                                    borderColor: 'red',
+                                    background: "rgb(42, 39, 52)", color: '#fff',
+                                }
+                            }}
+                            allowcountry={["us", "af", "germany", "in", "cn"]}
+                        // use 'allowcountry' props to show only specific country
                         />
                     </Grid>
                     <Grid item xs={6} lg={6} md={6}>
@@ -43,8 +49,19 @@ export default function ExamppleOne() {
                             onChange={setState}
                             showLabel
                             label="Select State"
-                            labelProps={{ className: 'testClassname', style: { textTransform: 'uppercase', color: 'blue' } }}
-                            inputProps={{ className: 'selectorInput', style: { borderColor: '#000', background: "#e9e7dc", color: '#000' } }}
+                            inputProps={{
+                                className: 'selectorInput',
+                                style: {
+                                    borderColor: 'red',
+                                    background: "rgb(42, 39, 52)", color: '#fff',
+                                }
+                            }}
+                            whitelist={{
+                                CA: ["BC", "AB", "MB"],
+                                US: ["washington", "Oregon", "Illinois"],
+                                in: ['hp', "punjab"],
+                            }}
+                        // use 'whitelist' props to show only specific regions from the selected countries
                         />
                     </Grid>
                 </Grid>

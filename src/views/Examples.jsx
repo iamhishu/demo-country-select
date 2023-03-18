@@ -10,6 +10,10 @@ import ExampleFourPreview from "./ExamplePreview/ExampleFourPreview";
 import ExampleFivePreview from "./ExamplePreview/ExampleFivePreview";
 import ExampleFour from "./Examples/ExampleFour";
 import ExampleFive from "./Examples/ExampleFive";
+import ExampleSix from "./Examples/ExampleSix";
+import ExampleSixPreview from "./ExamplePreview/ExampleSixPreview";
+import ExampleSeven from "./Examples/ExampleSeven";
+import ExampleSevenPreview from "./ExamplePreview/ExampleSevenPreview";
 function TwoColumnLayout() {
     return (
         <Grid container spacing={2}>
@@ -39,12 +43,25 @@ function TwoColumnLayout() {
             <Grid item xs={12} md={6} lg={6}>
                 <ExampleFourPreview />
             </Grid>
-            {/* <Grid item xs={12} md={6} lg={6}>
+            <Grid item xs={12} md={6} lg={6}>
                 <ExampleFive />
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
                 <ExampleFivePreview />
-            </Grid> */}
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+                <ExampleSix />
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+                <ExampleSixPreview />
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+                <ExampleSeven />
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+                <ExampleSevenPreview />
+            </Grid>
+
         </Grid>
     );
 }

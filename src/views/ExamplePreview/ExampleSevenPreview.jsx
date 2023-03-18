@@ -5,7 +5,7 @@ import theme from "prism-react-renderer/themes/nightOwl";
 //
 const basicUsage = `
   const [country, setCountry] = useState('');
-const [region, setRegion] = useState('');
+
 
 <CountrySelector
 showCountryFlag
@@ -13,28 +13,39 @@ value={country}
 onChange={setCountry}
 showLabel
 label="Select Country"
-labelProps={{ className: 'testClassname', 
-style: { textTransform: 'uppercase', color: 'red' } 
+inputProps={{
+    className: 'selectorInput',
+    style: {
+        borderColor: 'red',
+        background: "rgb(42, 39, 52)", color: '#fff',
+    }
 }}
-inputProps={{ className: 'selectorInput', 
-style: { borderColor: 'red', 
-background: "rgb(42, 39, 52)", color: '#fff' 
-} 
-}}
+allowcountry={["us", "af", "germany", "in", "cn"]}
+// use 'allowcountry' props to show only specific country
 />
+
 <RegionSelector
 country={country}
 value={state}
 onChange={setState}
 showLabel
 label="Select State"
-labelProps={{ className: 'testClassname', 
-style: { textTransform: 'uppercase', color: 'blue' }
- }}
-inputProps={{ className: 'selectorInput', 
-style: { borderColor: '#000', background: "#e9e7dc", color: '#000' } 
+inputProps={{
+    className: 'selectorInput',
+    style: {
+        borderColor: 'red',
+        background: "rgb(42, 39, 52)", color: '#fff',
+    }
 }}
+whitelist={{
+    CA: ["BC", "AB", "MB"],
+    US: ["washington", "Oregon", "Illinois"],
+    in: ['hp', "punjab"],
+}}
+// use 'whitelist' props to show only specific 
+//regions from the selected countries
 />
+
 `.trim();
 
 
