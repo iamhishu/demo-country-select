@@ -16,7 +16,10 @@ export default function ImageAvatars() {
 
     return (
         <div className={classes.root}>
-            <Avatar alt="its_hishu" src={melogo} />
+            <a href='https://www.instagram.com/its_hishu/?hl=en' target={"_blank"} alt="its_hishu">
+                <Avatar alt="its_hishu" src={melogo} />
+            </a>
+
         </div>
     );
 }
